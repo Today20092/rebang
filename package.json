@@ -1,12 +1,15 @@
 {
   "name": "rebang",
+  "homepage": "https://today20092.github.io/rebang/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist" 
   },
   "devDependencies": {
     "@types/node": "^22.13.9",

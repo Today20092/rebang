@@ -6,5 +6,6 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
     }),
+    base: "/rebang",
   ],
 });
