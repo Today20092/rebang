@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to your main branch if needed
+      - main  # Replace with your main branch name if different
 
   # Allows manual triggering
   workflow_dispatch:
@@ -28,15 +28,27 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci  # Use npm ci for a clean, consistent install
+        run: npm ci
 
       - name: Build website
-        run: npm run build   # Now we KNOW this is 'tsc && vite build'
+        run: npm run build
+
+      - name: List files (Debug) # Keep this for now, helps with debugging
+        run: |
+          ls -la ./dist
+          ls -la ./
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # --- OPTION 1: Use GITHUB_TOKEN (Preferred - try this first) ---
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist    # Correct, as per the default Vite output
-          # Optional, uncomment and customize for custom domain:
-          # cname: example.com
+          publish_dir: ./dist
+
+          # --- OPTION 2: Use DEPLOY_TOKEN (Fallback - ONLY if GITHUB_TOKEN fails) ---
+          # **IMPORTANT:**  Uncomment the lines below ONLY if you've created a DEPLOY_TOKEN secret
+          # and have exhausted all other troubleshooting for the 403 error.
+          # github_token: ${{ secrets.DEPLOY_TOKEN }}
+          # publish_dir: ./dist
+
+          #
