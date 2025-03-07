@@ -1,49 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      html, body {
-        background-color: #000; /* Or match your dark theme */
-        color: #fff;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    html,
+    body {
+      background-color: #000;
+      /* Or match your dark theme */
+      color: #fff;
+    }
     </style>
-    <link rel="icon" type="image/x-icon" href="/ReBangLogoBG.ico" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <script
-      defer
-      data-domain="unduck.link"
-      src="https://plausible.io/js/script.js"
-    ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>!ReBang</title>
-    <meta
-      name="description"
-      content="A better default search engine (with bangs!)"
-    />
-  </head>
-  <body style="background-color: transparent">
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <link rel="search" type="application/opensearchdescription+xml" title="Unduck" href="/opensearch.xml" />
+  <link rel="icon" type="image/x-icon" href="/ReBangLogoBG.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    media="print" onload="this.media='all'" />
+  <script defer data-domain="unduck.link" src="https://plausible.io/js/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>!ReBang</title>
+  <meta name="description" content="A better default search engine (with bangs!)" />
+</head>
+
+<body style="background-color: transparent">
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
